@@ -4,7 +4,7 @@ export ADDITIONAL_CFLAGS = -DTHEOS_LEAN_AND_MEAN -fobjc-arc
 
 include $(THEOS)/makefiles/common.mk
 
-TOOL_NAME = fouldecrypt flexdecrypt2 foulwrapper
+TOOL_NAME = fouldecrypt flexdecrypt2 foulwrapper my_dlopen
 
 # export USE_TFP0 = 1
 export USE_LIBKRW = 1
@@ -35,5 +35,8 @@ foulwrapper_CODESIGN_FLAGS = -Sentitlements.plist
 foulwrapper_INSTALL_PATH = /usr/local/bin
 foulwrapper_FRAMEWORKS = Foundation MobileCoreServices
 foulwrapper_PRIVATE_FRAMEWORKS = MobileContainerManager
+
+my_dlopen_FILES = my_dlopen.c
+my_dlopen_INSTALL_PATH = /usr/local/bin
 
 include $(THEOS_MAKE_PATH)/tool.mk
